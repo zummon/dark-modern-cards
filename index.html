@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dark modern cards</title>
   </head>
@@ -142,7 +141,19 @@
         </div>
       </div>
     </div>
+    <script>
+      var toggleEl = document.querySelector("#set-dark");
+
+      function handle(isDark) {
+        document.documentElement.className = isDark ? "dark" : "";
+      }
+
+      toggleEl.addEventListener("change", function (event) {
+        handle(event.target.checked);
+      });
+
+      handle(toggleEl.checked);
+    </script>
     <script type="module" src="/src/main.js"></script>
-    <script src="/script.js"></script>
   </body>
 </html>
